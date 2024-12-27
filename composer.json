@@ -1,0 +1,35 @@
+{
+    "name": "ajnorman/cf-turnstile-laravel-middleware",
+    "description": "A package that adds middleware to check for bots using Cloudflare Turnstile",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ajnorman\\CfTurnstileLaravelMiddleware\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ajnorman\\CfTurnstileLaravelMiddleware\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aidan Norman",
+            "email": "mail@ajnorman.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    }
+}
