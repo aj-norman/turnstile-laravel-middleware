@@ -1,5 +1,5 @@
 {
-    "name": "ajnorman/cf-turnstile-laravel-middleware",
+    "name": "ajnorman/turnstile-laravel-middleware",
     "description": "A package that adds middleware to check for bots using Cloudflare Turnstile",
     "type": "library",
     "license": "MIT",
