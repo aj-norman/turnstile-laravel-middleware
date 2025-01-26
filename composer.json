@@ -10,7 +10,10 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Ajnorman\\CfTurnstileLaravelMiddleware\\Tests\\": "tests/"
+            "Ajnorman\\CfTurnstileLaravelMiddleware\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     },
     "authors": [
@@ -21,7 +24,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/http": "v11.0",
+        "guzzlehttp/guzzle": "^7.0",
         "illuminate/support": "^11.0",
         "nesbot/carbon": "^3.8"
     },
@@ -36,6 +39,25 @@
         }
     },
     "require-dev": {
+        "orchestra/testbench": "^9.9",
         "pestphp/pest": "^3.7"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve --ansi"
+        ],
+        "test": [
+            "@clear",
+            "@php vendor/bin/pest"
+        ]
     }
 }

@@ -14,4 +14,8 @@
             <directory suffix=".php">./src</directory>
         </include>
     </source>
+    <php>
+        <env name="CF_TURNSTILE_SITE_KEY" value="site_key" />
+        <env name="CF_TURNSTILE_SECRET_KEY" value="secret_key" />
+    </php>
 </phpunit>
