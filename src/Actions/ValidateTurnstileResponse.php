@@ -25,9 +25,15 @@ class ValidateTurnstileResponse
     public function validate(string $challengeResponse, string|null $remoteIp): TurnstileResponse
     {
         $response = $this->client->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-            'secret'   => config('cf-turnstile.secret_key'),
-            'response' => $challengeResponse,
-            'remoteip' => $remoteIp,
+            'headers' => [
+                'Accept'       => 'application/json',
+                'Content-Type' => 'application/json',
+            ],
+            'json' => [
+                'secret'   => config('cf-turnstile.secret_key'),
+                'response' => $challengeResponse,
+                'remoteip' => $remoteIp,
+            ],
         ]);
 
         if ($response->getStatusCode() !== 200) {

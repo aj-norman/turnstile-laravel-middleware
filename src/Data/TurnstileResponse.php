@@ -48,4 +48,9 @@ readonly class TurnstileResponse
     {
         return $this->payload['metadata'];
     }
+
+    public function toArray(): array
+    {
+        return $this->payload;
+    }
 }

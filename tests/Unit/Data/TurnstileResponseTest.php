@@ -67,3 +67,18 @@ describe('Testing `getMetadata`', function () use ($successfulPayload) {
     it('should return the metadata')
         ->expect($successfulPayload->getMetadata())->toBe(['id' => '123456']);
 });
+
+describe('Testing `toArray`', function () use ($successfulPayload) {
+    it('should return the payload as an array')
+        ->expect($successfulPayload->toArray())->toBe([
+            'success' => true,
+            'challenge_ts' => '2025-01-26T12:00:00Z',
+            'hostname' => 'example.com',
+            'action' => 'submit',
+            'cdata' => 'cdata',
+            'error-codes' => [],
+            'metadata' => [
+                'id' => '123456',
+            ],
+        ]);
+});
