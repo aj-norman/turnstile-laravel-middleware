@@ -27,6 +27,7 @@
         "guzzlehttp/guzzle": "^7.0",
         "illuminate/http": "*",
         "illuminate/support": "^11.0",
+        "illuminate/view": "*",
         "nesbot/carbon": "^3.8"
     },
     "minimum-stability": "dev",
