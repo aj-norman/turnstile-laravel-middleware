@@ -55,7 +55,7 @@ describe('Testing validation failed flow', function () {
         $handlerStack = new HandlerStack($mockHandler);
         $action = new ValidateTurnstileResponse(new Client(['handler' => $handlerStack]));
 
-        $closure = fn() => $response->validate('fake-response', null);
+        $closure = fn() => $action->validate('fake-response', null);
         expect($closure)->toThrow(TurnstileValidationException::class, $expectedErrorMessage);
     })
     ->with([
